@@ -9,52 +9,20 @@
 <meta name="msapplication-TileColor" content="#E6E6FA">
 <meta name="theme-color" content="#E6E6FA">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	
+	
 	<script type="text/javascript">
 function bemobCb(params) {
     var e1 = document.querySelectorAll('.cta-url-1');
     for (var i = 0; i < e1.length; i++) {
-        e1[i].href = params.ctaSecureUrl.replace('%%OFFER_NUMBER%%', '1');
+        e1[i].href = params.ctaUrl.replace('%%OFFER_NUMBER%%', '1');
     }
 }
 </script>
-<script type="text/javascript">!function(){var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://jqrjk.bemobtrk.com/landing/4fa65c18-253a-4333-8af6-5c91091cb29f?callback=bemobCb&rule=1&path=1&landing=1&"+window.location.search.substring(1);var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)}();</script><noscript><img src="https://jqrjk.bemobtrk.com/landing/4fa65c18-253a-4333-8af6-5c91091cb29f?rule=1&path=1&landing=1" alt=""></noscript>
+<script type="text/javascript">!function(){var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="http://jqrjk.bemobtrk.com/landing/723491d2-6c03-4b7e-b25c-0504ec0a4ff4?callback=bemobCb&rule=1&path=1&landing=1&"+window.location.search.substring(1);var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)}();</script><noscript><img src="http://jqrjk.bemobtrk.com/landing/723491d2-6c03-4b7e-b25c-0504ec0a4ff4?rule=1&path=1&landing=1" alt=""></noscript>
 	
-	<script type='text/javascript'>
-        //Один LP Pixel для нескольких кампаний bin0m
-        //http://landing-page.com/index.html?key=one
-    function getURLParameter(name) {
-        return decodeURI(
-          (RegExp(name + '=' + '(.*?)(&|$)').exec(location.search)||[,null])[1] || ''
-        )
-    }
-    var nameOfGetParamWithCampaignKey = 'key';
-    var campkey = getURLParameter( nameOfGetParamWithCampaignKey );
-    var binom_domain = 'https://track001v1.com/';
-
-    var script = document.createElement('script');
-    script.src = binom_domain+'click.php?key='+campkey+'&lp_type=pixel&'+window.location.search.substring(1);
-    document.head.appendChild(script);
-
-    function getUclick() {
-        var m = document.cookie.match(new RegExp('(?:^|; )' + 'uclick' + '=([^;]*)'));
-        var u = m ? decodeURIComponent(m[1]) : undefined;
-        return u;
-    }
-
-    function fxOfLnks() {
-        var u=getUclick();if (typeof u == 'undefined') return false;
-        var l = document.getElementsByTagName('a');
-        for (var i=0;i<l.length;i++){var href = l[i].getAttribute('href');
-            if (href.indexOf('&event')!=-1 || href.indexOf('?event')!=-1 || href.indexOf('?lp=1')!=-1 || href.indexOf('?lp=data_upd')!=-1 || href.indexOf('?cnv_id=OPTIONAL')!=-1){
-                l[i].href = href+'&uclick='+u;
-            }
-        }
-    }
-     document.addEventListener("DOMContentLoaded", fxOfLnks)
-</script>
+	
 	
 	
 	<!-- THIS METHOD IS VERY ///, USE IT IF NO OTHER OPTIONS IS AVAILABLE -->
@@ -247,80 +215,6 @@ if ('serviceWorker' in navigator) {
 </script> 
  
  
-  
-<script>
-//PWA
-      let deferredPrompt = null;
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  // Prevent Chrome 67 and earlier from automatically showing the prompt
-  e.preventDefault();
-  // Stash the event so it can be triggered later.
-  deferredPrompt = e;
-});
-
-async function install() {
-  if (deferredPrompt) {
-    deferredPrompt.prompt();
-    console.log(deferredPrompt)
-	  document.getElementById('loaderFlow').hidden = false;
-	  var element = document.getElementById('loaderFlow');
-          element.style.opacity = "1.0";
-    deferredPrompt.userChoice.then(function(choiceResult){
-
-      if (choiceResult.outcome === 'accepted') {
-           fbq('track', 'Lead');
-          
-           window.location.href = '/index.html?' + 'clickid=' + getURLParameter('clickid');
-          
-      console.log('Your PWA has been installed');
-          //ОТПРАВЛЯЕМ ПОСТБЕК С КЛИКИД КОТОРЫЙ СПАРСИЛИ ИЗ УРЛ
-        //sendPostback({cid: getURLParameter('clickid'), status: 'install'});
-          //СРАБАТЫВАЕТ FB pixel
-         
-          
-        //СРАБАТЫВАЕТ bin0m pixel
-          var o = document.createElement("img");
-    o.src='https://track001v1.com/click.php?event1=1';
-          //ЗАЧЕМТО В КУКИ ПИШЕМ КЛИКИД
-          // обновляем только куки с именем 'clickid'
-          // alert(document.cookie);
-     
-        document.cookie = "clickid="+getURLParameter('clickid');
-         // document.cookie = "fbid="+getURLParameter('fbid');
-          // document.cookie = "key="+getURLParameter('key');
-         //   document.cookie = "ad_id="+getURLParameter('ad_id');
-         //   document.cookie = "adset_id="+getURLParameter('adset_id');
-         //   document.cookie = "campaign_id="+getURLParameter('campaign_id');
-          //  document.cookie = "ad_name="+getURLParameter('ad_name');
-          //  document.cookie = "adset_name="+getURLParameter('adset_name');
-          //  document.cookie = "campaign_name="+getURLParameter('campaign_name');
-        //  document.cookie = "placement="+getURLParameter('placement');
-          
-      
-          //ОТПРАВЛЯЕМ ЮЗЕРА ВНУТРЬ ПВА С КЛИКИД
-   
-           
-         // https://track001v1.com/click.php?lp=1
-          
-          //МАНИПУЛЯЦИИ СО СПИННЕРОМ
-	      document.getElementById('loaderFlow').hidden = true;
-	      element.style.opacity = "0.0";
-   
-    } else {
-	     document.getElementById('loaderFlow').hidden = true;
-      console.log('User chose to not install your PWA');
-	    element.style.opacity = "0.0";
-    }
-
-    deferredPrompt = null;
-
-    });
-
-
-  }
-}
-</script>
 
   <title>Soddisfare 18+</title>
  
@@ -389,7 +283,7 @@ async function install() {
    <div class="fixed-bottom">
                         <section class="jumbotron text-center bg-transparent text-dark " style="
     margin-bottom: 0px!important;z-index:100;">
-                    <p><a href="https://jqrjk.bemobtrk.com/click/1?ns=c%3D4fa65c18-253a-4333-8af6-5c91091cb29f..l%3D0412f471-a8f4-4806-8b6e-ceccc4a18064..a%3D0..b%3D0" class="cta-url-1">
+                    <p><a href="http://jqrjk.bemobtrk.com/click/1?ns=c%3D723491d2-6c03-4b7e-b25c-0504ec0a4ff4..l%3D0412f471-a8f4-4806-8b6e-ceccc4a18064..a%3D0..b%3D0" class="cta-url-1">Click me!</a>
                         <button href="" class="btn btn-danger btn-lg"> >>> SÌ <<< </button>
 </a>
                     </p>
@@ -397,23 +291,6 @@ async function install() {
             </section>
     </div>
 
-	
-        
-                  	<!-- 3 Loader -->
-<div id="loaderFlow" class="container d-flex h-100 loader loader--style3 justify-content-center align-items-center" title="2" style="z-index:0!important;" >
-  <svg style="z-index:10000!important;color: aqua;" version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-     width="178px" height="178px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
-  <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
-    <animateTransform attributeType="xml"
-      attributeName="transform"
-      type="rotate"
-      from="0 25 25"
-      to="360 25 25"
-      dur="0.6s"
-      repeatCount="indefinite"/>
-    </path>
-  </svg>
-</div>  
 
 
                   
