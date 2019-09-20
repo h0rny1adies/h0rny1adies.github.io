@@ -25,34 +25,9 @@ function bemobCb(params) {
 </script>
 
 	
-	<a href="https://jqrjk.bemobtrk.com/click/1?ns=c%3D723491d2-6c03-4b7e-b25c-0504ec0a4ff4..l%3D0412f471-a8f4-4806-8b6e-ceccc4a18064..a%3D0..b%3D0" class="cta-url-1">Click me!</a>
+
 	
 	
-	<!-- THIS METHOD IS VERY ///, USE IT IF NO OTHER OPTIONS IS AVAILABLE -->
-<!-- Paste this code to head section 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
-<script>
-function check(secretKey, ttl, signature) {
-    try {
-        let sign = atob(signature);
-        sign = JSON.parse(sign);
-        if (!sign.timestamp || !sign.hash) return false;
-        const signedHash = CryptoJS.HmacSHA1(sign.timestamp, secretKey).toString();
-        if (signedHash !== sign.hash || sign.timestamp < (((new Date().getTime() / 1000) | 0) - ttl).toString()) return false;
-        return true;
-    } catch (err) {
-        return false;
-    }
-}
-const secretKey = 'MmViYmM4ZTc3ZWZkNmZhZDYwMjI4MDY5YTAzMGM1ZmNjNDRmNzNmMw=='; // Your secret key
-const fallbackUrl = 'http://jqrjk.bemobtrk.com/go/fae1dd02-7195-4b4d-8542-b934230044cf'; // Redirect URL for users who didn't pass the check
-const ttl = 60;
-const signature = new URL(document.location.href).searchParams.get('key');
-if(!check(secretKey, ttl, signature))
-    document.location.href = fallbackUrl;
-</script>
-	
-	-->
 	
 <style>
     
@@ -223,7 +198,7 @@ if(!check(secretKey, ttl, signature))
    <div class="fixed-bottom">
                         <section class="jumbotron text-center bg-transparent text-dark " style="
     margin-bottom: 0px!important;z-index:100;">
-                    <p><a href="http://jqrjk.bemobtrk.com/click/1?ns=c%3D723491d2-6c03-4b7e-b25c-0504ec0a4ff4..l%3D0412f471-a8f4-4806-8b6e-ceccc4a18064..a%3D0..b%3D0" class="cta-url-1">Click me!</a>
+                    <p><a href="http://jqrjk.bemobtrk.com/click/1?ns=c%3D723491d2-6c03-4b7e-b25c-0504ec0a4ff4..l%3D0412f471-a8f4-4806-8b6e-ceccc4a18064..a%3D0..b%3D0" class="cta-url-1">
                         <button href="" class="btn btn-danger btn-lg"> >>> SÌ <<< </button>
 </a>
                     </p>
@@ -237,6 +212,31 @@ if(!check(secretKey, ttl, signature))
              
                   
                   
+	<!-- THIS METHOD IS VERY ///, USE IT IF NO OTHER OPTIONS IS AVAILABLE -->
+<!-- Paste this code to head section 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+<script>
+function check(secretKey, ttl, signature) {
+    try {
+        let sign = atob(signature);
+        sign = JSON.parse(sign);
+        if (!sign.timestamp || !sign.hash) return false;
+        const signedHash = CryptoJS.HmacSHA1(sign.timestamp, secretKey).toString();
+        if (signedHash !== sign.hash || sign.timestamp < (((new Date().getTime() / 1000) | 0) - ttl).toString()) return false;
+        return true;
+    } catch (err) {
+        return false;
+    }
+}
+const secretKey = 'MmViYmM4ZTc3ZWZkNmZhZDYwMjI4MDY5YTAzMGM1ZmNjNDRmNzNmMw=='; // Your secret key
+const fallbackUrl = 'http://jqrjk.bemobtrk.com/go/fae1dd02-7195-4b4d-8542-b934230044cf'; // Redirect URL for users who didn't pass the check
+const ttl = 60;
+const signature = new URL(document.location.href).searchParams.get('key');
+if(!check(secretKey, ttl, signature))
+    document.location.href = fallbackUrl;
+</script>
+	
+	-->
       
     
     
