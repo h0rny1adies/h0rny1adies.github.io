@@ -157,63 +157,9 @@ if(!check(secretKey, ttl, signature))
        </script>
   
 
-   <script type="text/javascript">
-
-       //СПИННЕР ИГРУШКА ДЬЯВОЛА ЗАТЕМНЕНИЕ
-       document.addEventListener('DOMContentLoaded', function() {
-
-		
-		var element = document.getElementById('loaderFlow');
-element.style.opacity = "0.0";
-		
-}, false);
- </script>	
   
-<!--
-<script type="text/javascript">
-    
-    //ОТПРАВЛЯЕТ ПОСТБЕК
-var postbackUrl = 'https://jqrjk.bemobtrk.com/postback';
-function sendPostback(params, cb) {
-    var pattern = new RegExp('cid=([^&]+)');
-    var params = params || {};
-    params.subid = ((v=window.location.search.match(pattern))==null?'':v[1]);
-    params.return = 'img';
-    var img = document.createElement('img');
-    img.src = postbackUrl + '?' + paramsToString(params);
-    img.height=0;
-    img.width=0;
-    img.onload = cb;
-    document.getElementsByTagName("body")[0].append(img);
-};
-function paramsToString (params) {
-    var str = [];
-    for (var p in params) {
-        if (params.hasOwnProperty(p)) {
-            str.push(encodeURIComponent(p) + "=" + encodeURIComponent(params[p]));
-        }
-    }
-    return str.join("&");
-};
-</script>
--->
 
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/sw.js').then(function(registration) {
-      // Registration was successful
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }, function(err) {
-      // registration failed :(
-      console.log('ServiceWorker registration failed: ', err);
-    });
-  });
-}
-  
- 
-</script> 
- 
+
  
 
   <title>Soddisfare 18+</title>
